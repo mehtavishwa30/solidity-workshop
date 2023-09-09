@@ -225,7 +225,7 @@ function _multiply(uint a, uint b) private pure returns (uint) {
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.8.2 <0.9.0;
 
-contract RandomPokémonGenerator {
+contract RandomPokemonGenerator {
 
     // declare our event here
 
