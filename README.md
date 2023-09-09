@@ -4,7 +4,7 @@ In this workshop, we will be using Remix, a browser based development environmen
 
 ## Intro to Solidity
 
-Solidity is a fully open-source, statically-typed curly-braces programming language specifically designed for writing smart contracts that run on Ethereum. Using Solidity, you can write contracts for use cases such as voting, crowdfunding, multi-sig wallets, and more! Below we list some of the most popular use cases:
+[Solidity](https://docs.soliditylang.org/en/v0.8.21/) is a fully open-source, statically-typed curly-braces programming language specifically designed for writing smart contracts that run on Ethereum. Using Solidity, you can write contracts for use cases such as voting, crowdfunding, multi-sig wallets, and more! Below we list some of the most popular use cases:
 - DAOs
 - Gaming & Metaverse
 - DeFi
@@ -259,6 +259,6 @@ contract RandomPokemonGenerator {
 
 ## Next Steps
 
-Voila! Your Solidity Random Pokémon Generator smart contract is ready! Now we need to write a frontend using JS that can interacts with our contract. Ethereum has a JS library called Web3.js that allows you to do this. In part II, we will learn how to deploy a contract and set up Web3.js
+Voila! Your Solidity Random Pokémon Generator smart contract is ready! Now we need to write a frontend using JS that can interacts with our contract. Ethereum has a JS library called Web3.js that allows you to do this. In part II, we will learn how to deploy a contract and set up [Web3.js](https://web3js.readthedocs.io/en/v1.3.4/).
 
 Stay tuned for the next meetup and come learn more about Advanced Solidity in Part II of the workshop! :)
