@@ -74,7 +74,7 @@ contract Counter {
 }
 ```
 
-- SPDX-License Identifier:
+- SPDX-License Identifier: This is machine-readable identifier to tell the compiler under which the source code is licensed.
 - Versin Pragma: All solidity code starts with a "Version Pragma" which describes the version of the Solidity compiler that should be use. This is to prevent issues with future compiler versions potentially introducing changes that would break your code.
 
 <a id="2"></a>
@@ -147,27 +147,115 @@ Other contracts would then be able to read from, but not write to, this array. S
 
 A function in Solidity looks something like this:
 ```
-function eatHamburgers(string memory _name, uint _amount) public {
+function paint(string memory _color, uint _brush) public {
 //function body
 }
 ```
+You can pass aurguments to a function in two ways:
+- either by value
+- or by reference
 
 Here's how you can call this function:
+```
+paint("purple", 4);
+```
 
 <a id="7"></a>
 ### Working With Structs and Arrays
 
+```
+// create a New Person:
+Person satoshi = Person(172, "Satoshi");
+
+// Add that person to the Array:
+people.push(satoshi);
+```
+
+It is also possible to do this in one line:
+```
+people.push(Person(16, "Vitalik"));
+```
 
 <a id="8"></a>
 ### Private / Public Functions
 
+Here's how you can declare a private function:
+```
+uint[] numbers;
+
+function _addToArray(uint _number) private {
+  numbers.push(_number);
+}
+```
+This means only other functions within our contract will be able to call this function and add to the numbers array.
 
 <a id="9"></a>
-### More on Functions
+### Return Values & Function Modifiers
 
+#### Return Values
+In Solidity, the function declaration contains the return type. Here's how you can declare a function to return its value:
+```
+string greeting = "What's up dog";
+
+function sayHello() public returns (string memory) {
+  return greeting;
+}
+```
+
+#### Function Modifiers
+Solidity has `view` and `pure` functions. A `view` function can only view the data but not modify it. Whereas, a `pure` function can neither access nor write data in the smart contract.
+
+- `view` function declaration
+```
+function sayHello() public view returns (string memory) {
+}
+```
+
+- `pure` function declaration
+```
+function _multiply(uint a, uint b) private pure returns (uint) {
+  return a * b;
+}
+```
 
 <a id="10"></a>
 ### Public Function
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.8.2 <0.9.0;
+
+contract RandomPokémonGenerator {
+
+    // declare our event here
+
+    uint dnaDigits = 16;
+    uint dnaModulus = 10 ** dnaDigits;
+
+    struct Pokemon {
+        string name;
+        uint dna;
+    }
+
+    Pokemon[] public pokemons;
+
+    function _createPokemon(string memory _name, uint _dna) private {
+        pokemons.push(Pokemon(_name, _dna));
+        // and fire it here
+    }
+
+    function _generateRandomDna(string memory _str) private view returns (uint) {
+        uint rand = uint(keccak256(abi.encodePacked(_str)));
+        return rand % dnaModulus;
+    }
+
+    function createRandomPokemon(string memory _name) public {
+        uint randDna = _generateRandomDna(_name);
+        _createPokemon(_name, randDna);
+    }
+
+}
+```
 
 ## Next Steps
 
