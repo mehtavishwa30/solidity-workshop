@@ -25,7 +25,7 @@ This is Part I of a longer workshop that teaches you how to build a Pokémon gam
 
 ## Pokémon DNA & Individual Values
 
-The Pokémon being created depends on the individual values passed by the user to form a unique 16-digit identifier called the Pokémon DNA. For instance, a Ditto has the following individual values or IV. 
+The Pokémon being created depends on the individual values passed by the user to form a unique 16-digit identifier called the Pokémon DNA.
 
 Enough of nerdy Pokémon stuff. Let's dive right into learning Solidity!
 
